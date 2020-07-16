@@ -159,7 +159,7 @@ extension PXCongratsData: PXNewResultViewModelInterface {
     func getPaymentViewData() -> PXNewCustomViewData? {
         
         firstString.append(getPMFirstString("\(totalAmount)"))
-        secondString.append(getPMSecondString("Visa terminada en 3400"))
+        secondString.append(getPMSecondString( paymentId.capitalized + " terminada en 3400"))
         icon = ResourceManager.shared.getImageForPaymentMethod(withDescription: paymentId, defaultColor: false)
               let data = PXNewCustomViewData(firstString: firstString, secondString: secondString, thirdString: thirdString, icon: icon, iconURL: nil, action: nil, color: .white)
               return data
